@@ -143,19 +143,30 @@
                                 <div class="overlap-box">
                                     <div class="overlap-btns-area">
                                         <div class="car-magnify-gallery">
-                                            <a href="{{car.photo_1}}" class="overlap-btn" data-sub-html="<h4>Toyota Prius Specs</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                            <a href="{{car.main_photo.url}}" class="overlap-btn" data-sub-html="<h4>Toyota Prius Specs</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
                                                 <i class="fa fa-expand"></i>
                                                 <img class="hidden" src="{{car.main_photo.url}}" alt="hidden-img">
                                             </a>
-                                            <a href="{{car.photo_2}}" class="hidden" data-sub-html="<h4>Lexus GS Red Car</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                                <img class="hidden" src="img/car/car-2.jpg" alt="hidden-img">
+                                            {% if car.photo_1 %}
+                                            <a href="{{car.photo_1.url}}" class="hidden" data-sub-html="<h4>Lexus GS Red Car</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                <img class="hidden" src="{{car.photo_1.url}}" alt="hidden-img">
                                             </a>
-                                            <a href="{{car.photo_3}}" class="hidden" data-sub-html="<h4>2015 Porsche Cayenne</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                                <img class="hidden" src="img/car/car-3.jpg" alt="hidden-img">
+                                            {% endif %}
+                                            {% if car.photo_2 %}
+                                            <a href="{{car.photo_2.url}}" class="hidden" data-sub-html="<h4>2015 Porsche Cayenne</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                <img class="hidden" src="{{car.photo_2.url}}" alt="hidden-img">
                                             </a>
-                                            <a href="{{car.photo_4}}" class="hidden" data-sub-html="<h4>Toyota Corolla</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                                <img class="hidden" src="img/car/car-4.jpg" alt="hidden-img">
+                                            {% endif %}
+                                            {% if car.photo_3 %}
+                                            <a href="{{car.photo_3.url}}" class="hidden" data-sub-html="<h4>Toyota Corolla</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                <img class="hidden" src="{{car.photo_3.url}}" alt="hidden-img">
                                             </a>
+                                            {% endif %}
+                                            {% if car.photo_4 %}
+                                            <a href="{{car.photo_4.url}}" class="hidden" data-sub-html="<h4>Toyota Corolla</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
+                                                <img class="hidden" src="{{car.photo_4.url}}" alt="hidden-img">
+                                            </a>
+                                            {% endif %}
                                             
                                         </div>
                                     </div>
@@ -233,19 +244,30 @@
                             <div class="overlap-box">
                                 <div class="overlap-btns-area">
                                     <div class="car-magnify-gallery">
-                                        <a href="img/car/car-1.jpg" class="overlap-btn">
+                                        <a href="{{car.main_photo.url}}" class="overlap-btn">
                                             <i class="fa fa-expand"></i>
-                                            <img class="hidden" src="img/car/car-1.jpg">
+                                            <img class="hidden" src="{{car.main_photo.url}}">
                                         </a>
-                                        <a href="img/car/car-2.jpg" class="hidden">
-                                            <img class="hidden" src="img/car/car-2.jpg">
+                                        {% if car.photo_1 %}
+                                        <a href="{{car.photo_1.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.photo_1.url}}">
                                         </a>
-                                        <a href="img/car/car-3.jpg" class="hidden">
-                                            <img class="hidden" src="img/car/car-3.jpg">
+                                        {% endif %}
+                                        {% if car.photo_2 %}
+                                        <a href="{{car.photo_2.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.photo_2.url}}">
                                         </a>
-                                        <a href="img/car/car-4.jpg" class="hidden">
-                                            <img class="hidden" src="img/car/car-4.jpg">
+                                        {% endif %}
+                                        {% if car.photo_3 %}
+                                        <a href="{{car.photo_3.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.photo_3.url}}">
                                         </a>
+                                        {% endif %}
+                                        {% if car.photo_4 %}
+                                        <a href="{{car.photo_4.url}}" class="hidden">
+                                            <img class="hidden" src="{{car.photo_4.url}}">
+                                        </a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
