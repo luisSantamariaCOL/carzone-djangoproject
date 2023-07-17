@@ -1,6 +1,8 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
 from datetime import datetime
+from ckeditor.fields import RichTextField
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 class Car(models.Model):
@@ -96,13 +98,13 @@ class Car(models.Model):
     year = models.IntegerField(('year'), choices=year_choice)
     condition = models.CharField(max_length=100)
     price = models.IntegerField()
-    description = models.TextField(max_length=500)
+    description = RichTextField()
     main_photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
     photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_2 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_3 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_4 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
-    features = models.CharField(choices=features_choices, max_length=100)
+    features = MultiSelectField(choices=features_choices, max_length=255)
     body_style = models.CharField(max_length=100)
     engine = models.CharField(max_length=100)
     transmission = models.CharField(max_length=100)
@@ -117,3 +119,7 @@ class Car(models.Model):
     is_featured = models.BooleanField(default=False)
     created_date = models.DateTimeField(default=datetime.now(), blank=True)
     
+
+    def __str__(self):
+        
+        return self.title
