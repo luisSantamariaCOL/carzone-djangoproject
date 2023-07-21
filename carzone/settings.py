@@ -31,6 +31,17 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+STARTED_APPS = [
+    'pages',
+    'cars',
+    'accounts',
+]
+
+INSTALLED_LIBRARIES = [
+    'ckeditor',
+    'django.contrib.humanize',
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,11 +49,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pages',
-    'cars',
-    'ckeditor',
-    'django.contrib.humanize',
 ]
+
+INSTALLED_APPS.extend(STARTED_APPS)
+INSTALLED_APPS.extend(INSTALLED_LIBRARIES)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
