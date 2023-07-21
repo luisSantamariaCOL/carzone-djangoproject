@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-STARTED_APPS = [
+PROJECT_APPS = [
     'pages',
     'cars',
     'accounts',
@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_APPS.extend(STARTED_APPS)
+INSTALLED_APPS.extend(PROJECT_APPS)
 INSTALLED_APPS.extend(INSTALLED_LIBRARIES)
 
 MIDDLEWARE = [
