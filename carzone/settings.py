@@ -29,6 +29,12 @@ DEBUG = config('DEBUG', cast=bool) # True
 ALLOWED_HOSTS = []
 
 
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
+LOGIN_REDIRECT_URL = 'accounts:dashboard'
+
+SITE_ID = 1
+
 # Application definition
 
 PROJECT_APPS = [
@@ -162,4 +168,3 @@ MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
 
-SITE_ID = 1
