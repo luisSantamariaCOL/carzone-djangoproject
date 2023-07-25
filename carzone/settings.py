@@ -41,6 +41,7 @@ PROJECT_APPS = [
     'pages',
     'cars',
     'accounts',
+    'contacts',
 ]
 
 INSTALLED_LIBRARIES = [
