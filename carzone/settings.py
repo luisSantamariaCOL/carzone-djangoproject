@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import dj_database_url
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -77,6 +78,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'carzone.urls'
@@ -103,16 +105,17 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('POSTGRESQL_DB'),
-        'USER': config('POSTGRESQL_USER'),
-        'PASSWORD': config('POSTGRESQL_PASSWORD'),
-        'HOST': config('POSTGRESQL_HOST', default='localhost'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('POSTGRESQL_DB'),
+#         'USER': config('POSTGRESQL_USER'),
+#         'PASSWORD': config('POSTGRESQL_PASSWORD'),
+#         'HOST': config('POSTGRESQL_HOST', default='localhost'),
+#     }
+# }
 
+DATABASES = {'default': dj_database_url.config(default=f'{config("POSTGRESQL_USER")}://{config("POSTGRESQL_USER")}:{config("POSTGRESQL_PASSWORD")}@localhost/{config("POSTGRESQL_DB")}')}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -176,3 +179,5 @@ EMAIL_HOST_USER = 'estebanmillo700@gmail.com'
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD') #gdlmrzzpbrqaislk # 
 EMAIL_USE_TLS = True
 
+# whitenoise settings
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
