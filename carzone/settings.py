@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e&wxif&s666*wxad=##+d+i9&4&oe^d(qi#sbe09$8aef_b48!' # config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool) # True
+DEBUG = True # config('DEBUG', cast=bool) # True
 
 ALLOWED_HOSTS = []
 
@@ -115,7 +115,8 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.config(default=f'{config("POSTGRESQL_USER")}://{config("POSTGRESQL_USER")}:{config("POSTGRESQL_PASSWORD")}@localhost/{config("POSTGRESQL_DB")}')}
+# DATABASES = {'default': dj_database_url.config(default=f'{config("POSTGRESQL_USER")}://{config("POSTGRESQL_USER")}:{config("POSTGRESQL_PASSWORD")}@localhost/{config("POSTGRESQL_DB")}')}
+DATABASES = {'default': dj_database_url.config(default='postgres://postgres:noviembre.04@localhost/carzone_db')}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -176,7 +177,7 @@ MESSAGE_TAGS = {
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'estebanmillo700@gmail.com'
-EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD') #gdlmrzzpbrqaislk # 
+EMAIL_HOST_PASSWORD = 'cmvnbesueixltwch' # config('EMAIL_PASSWORD') #gdlmrzzpbrqaislk # 
 EMAIL_USE_TLS = True
 
 # whitenoise settings
