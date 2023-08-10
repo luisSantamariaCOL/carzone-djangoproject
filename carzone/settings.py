@@ -29,8 +29,8 @@ SECRET_KEY = 'e&wxif&s666*wxad=##+d+i9&4&oe^d(qi#sbe09$8aef_b48!' # config('SECR
 DEBUG = True # config('DEBUG', cast=bool) # True
 
 # ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ['protected-hollows-94158-2550c71ae30d.herokuapp.com', 'carzone.herokuapp.com', 'localhost', '127.0.0.1']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['protected-hollows-94158-2550c71ae30d.herokuapp.com', 'carzone.herokuapp.com', 'localhost', '127.0.0.1']
+# ALLOWED_HOSTS = ['*']
 
 
 SOCIALACCOUNT_LOGIN_ON_GET = True
@@ -186,4 +186,4 @@ EMAIL_USE_TLS = True
 # whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
