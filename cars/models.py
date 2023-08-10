@@ -63,7 +63,7 @@ class Car(models.Model):
     )
 
     year_choice = []
-    for r in range(2000, (datetime.now().year+1)):
+    for r in range(2000, (timezone.now().year+1)):
         year_choice.append((r,r))
 
     features_choices = (
