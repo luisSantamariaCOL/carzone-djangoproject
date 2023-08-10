@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import dj_database_url
+import django_heroku
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,7 +28,8 @@ SECRET_KEY = 'e&wxif&s666*wxad=##+d+i9&4&oe^d(qi#sbe09$8aef_b48!' # config('SECR
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True # config('DEBUG', cast=bool) # True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['carzone.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 SOCIALACCOUNT_LOGIN_ON_GET = True
@@ -182,3 +184,5 @@ EMAIL_USE_TLS = True
 
 # whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+django_heroku.settings(locals())
