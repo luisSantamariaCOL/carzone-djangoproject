@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
 from datetime import datetime
+from django.utils import timezone
 from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
 
@@ -117,7 +118,7 @@ class Car(models.Model):
     fuel_type = models.CharField(max_length=50)
     no_of_owners = models.IntegerField()
     is_featured = models.BooleanField(default=False)
-    created_date = models.DateTimeField(default=datetime.now(), blank=True)
+    created_date = models.DateTimeField(default=timezone.now(), blank=True)
     
 
     def __str__(self):
