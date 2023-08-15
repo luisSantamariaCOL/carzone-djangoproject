@@ -37,7 +37,7 @@ SOCIALACCOUNT_LOGIN_ON_GET = True
 
 LOGIN_REDIRECT_URL = 'accounts:dashboard'
 
-SITE_ID = 1
+SITE_ID = 3 # Default site id you are using in an environment ambient
 
 # Application definition
 
