@@ -31,10 +31,13 @@ DEBUG = False # config('DEBUG', cast=bool) # True
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['protected-hollows-94158-2550c71ae30d.herokuapp.com',
                  'luis-santamaria-carzone.com',
-                 'www.luis-santamaria-carzone.com',
-                 'http://127.0.0.1:8000/',
+                 'www.luis-santamaria-carzone.com']
+"""
+'http://127.0.0.1:8000/',
                  '127.0.0.1',
-                 'localhost']
+                 'localhost'
+"""
+
 # ALLOWED_HOSTS = ['*']
 
 
