@@ -2893,6 +2893,8 @@ input[type=checkbox]:checked + label:before {
     background: #fff;
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    min-height: 480px;
+    max-height: 480px;
 }
 
 .car-box-3:hover{
