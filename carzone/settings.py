@@ -186,14 +186,14 @@ MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
 
-# Email sending
+# Configuración de envío de correos electrónicos
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'estebanmillo700@gmail.com'
 EMAIL_HOST_PASSWORD = 'cmvnbesueixltwch' # config('EMAIL_PASSWORD') #gdlmrzzpbrqaislk # 
 EMAIL_USE_TLS = True
 
-# whitenoise settings
+# Configuración de Whitenoise para archivos estáticos
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # django_heroku.settings(locals())
