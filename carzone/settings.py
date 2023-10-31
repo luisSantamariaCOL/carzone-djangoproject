@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e&wxif&s666*wxad=##+d+i9&4&oe^d(qi#sbe09$8aef_b48!' # config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # config('DEBUG', cast=bool) # True
+DEBUG = False # config('DEBUG', cast=bool) # True
 
 # ALLOWED_HOSTS = [] #
 ALLOWED_HOSTS = ['protected-hollows-94158-2550c71ae30d.herokuapp.com',
@@ -40,7 +40,7 @@ ALLOWED_HOSTS = ['protected-hollows-94158-2550c71ae30d.herokuapp.com',
                  'localhost'
 """
 
-# ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*'] # Alternativa: permitir todos los hosts
 
 
 SOCIALACCOUNT_LOGIN_ON_GET = True
