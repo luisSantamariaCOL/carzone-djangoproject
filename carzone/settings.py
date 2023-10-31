@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e&wxif&s666*wxad=##+d+i9&4&oe^d(qi#sbe09$8aef_b48!' # config('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY') # config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True # config('DEBUG', cast=bool) # True
@@ -189,8 +189,8 @@ MESSAGE_TAGS = {
 # Configuración de envío de correos electrónicos
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'estebanmillo700@gmail.com'
-EMAIL_HOST_PASSWORD = 'cmvnbesueixltwch' # config('EMAIL_PASSWORD') #gdlmrzzpbrqaislk # 
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 
 # Configuración de Whitenoise para archivos estáticos
