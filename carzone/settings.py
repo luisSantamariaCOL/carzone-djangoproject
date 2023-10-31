@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY') # config('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY', default=os.environ.get('SECRET_KEY')) # config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True # config('DEBUG', cast=bool) # True
@@ -33,7 +33,8 @@ ALLOWED_HOSTS = ['protected-hollows-94158-2550c71ae30d.herokuapp.com',
                  'luis-santamaria-carzone-91fe77a28602.herokuapp.com',
                  'luis-santamaria-carzone.com',
                  'www.luis-santamaria-carzone.com',
-                 '127.0.0.1',]
+                 '127.0.0.1',
+                 'localhost:8000',]
 """
 'http://127.0.0.1:8000/',
                  '127.0.0.1',
@@ -47,7 +48,7 @@ SOCIALACCOUNT_LOGIN_ON_GET = True
 
 LOGIN_REDIRECT_URL = 'accounts:dashboard'
 
-SITE_ID = 3 # Default site id you are using in an environment ambient
+SITE_ID = 1 # Default site id you are using in an environment ambient, otherwise set to 3
 
 # Application definition
 
@@ -129,7 +130,7 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 # }
 
 # DATABASES = {'default': dj_database_url.config(default=f'{config("POSTGRESQL_USER")}://{config("POSTGRESQL_USER")}:{config("POSTGRESQL_PASSWORD")}@localhost/{config("POSTGRESQL_DB")}')}
-DATABASES = {'default': dj_database_url.config(default=os.environ.get("CARZONE_DB_URL"))}
+DATABASES = {'default': dj_database_url.config(default=config("CARZONE_DB_URL", default=os.environ.get("CARZONE_DB_URL")))}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -189,8 +190,8 @@ MESSAGE_TAGS = {
 # Configuración de envío de correos electrónicos
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default=os.environ.get('EMAIL_HOST_USER')) 
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default=os.environ.get('EMAIL_HOST_PASSWORD'))
 EMAIL_USE_TLS = True
 
 # Configuración de Whitenoise para archivos estáticos
